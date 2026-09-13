@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# IDE
+.vscode/
+
+# PySpark
+spark-warehouse/
+metastore_db/
+*.log
+
+# Qdrant local data
+qdrant_storage/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+tmp/
+temp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Synthetic generator output
+producer/output/
