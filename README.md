@@ -8,6 +8,14 @@ stream, detects behavioral anomalies, stores analytical data in
 Google BigQuery, and uses a vector database to retrieve similar
 historical incidents and operational runbooks.
 
+### Synthetic anomaly scenarios
+
+- Amount spike
+- Unusual country
+- New device
+- Velocity spike
+- Combined anomaly
+
 ## Architecture
 
 Transaction Generator

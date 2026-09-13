@@ -1,0 +1,1422 @@
+[
+  {
+    "customer_id": "cust_0001",
+    "average_amount": 14551.604060978656,
+    "amount_stddev": 5397.54986274245,
+    "country": "IN",
+    "device_ids": [
+      "device_0001_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0002",
+    "average_amount": 14495.586988619863,
+    "amount_stddev": 5753.773152190131,
+    "country": "IN",
+    "device_ids": [
+      "device_0002_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "transport",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0003",
+    "average_amount": 7539.84204849968,
+    "amount_stddev": 2446.7748220553613,
+    "country": "IN",
+    "device_ids": [
+      "device_0003_01",
+      "device_0003_02"
+    ],
+    "preferred_categories": [
+      "transport",
+      "travel",
+      "food",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0004",
+    "average_amount": 6829.477857418216,
+    "amount_stddev": 1531.8158705455523,
+    "country": "IN",
+    "device_ids": [
+      "device_0004_01",
+      "device_0004_02"
+    ],
+    "preferred_categories": [
+      "travel",
+      "grocery",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0005",
+    "average_amount": 5894.271620461923,
+    "amount_stddev": 2015.6343434696903,
+    "country": "IN",
+    "device_ids": [
+      "device_0005_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0006",
+    "average_amount": 8014.1178242063625,
+    "amount_stddev": 1465.199123621567,
+    "country": "GB",
+    "device_ids": [
+      "device_0006_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0007",
+    "average_amount": 10693.474705365768,
+    "amount_stddev": 3465.209246088643,
+    "country": "IN",
+    "device_ids": [
+      "device_0007_01",
+      "device_0007_02"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "transport",
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0008",
+    "average_amount": 12755.507575536612,
+    "amount_stddev": 4811.433757811842,
+    "country": "IN",
+    "device_ids": [
+      "device_0008_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "travel",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0009",
+    "average_amount": 7988.45730567799,
+    "amount_stddev": 3037.3180112089126,
+    "country": "IN",
+    "device_ids": [
+      "device_0009_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "grocery",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0010",
+    "average_amount": 10513.593901679444,
+    "amount_stddev": 1755.4971988832526,
+    "country": "US",
+    "device_ids": [
+      "device_0010_01"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0011",
+    "average_amount": 3343.539766834782,
+    "amount_stddev": 934.3119849184078,
+    "country": "GB",
+    "device_ids": [
+      "device_0011_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0012",
+    "average_amount": 4480.401733033254,
+    "amount_stddev": 1446.625085364269,
+    "country": "GB",
+    "device_ids": [
+      "device_0012_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0013",
+    "average_amount": 3263.709965498318,
+    "amount_stddev": 916.2295077710056,
+    "country": "US",
+    "device_ids": [
+      "device_0013_01",
+      "device_0013_02"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "grocery",
+      "travel",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0014",
+    "average_amount": 2175.6699100508476,
+    "amount_stddev": 490.308393401211,
+    "country": "IN",
+    "device_ids": [
+      "device_0014_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "grocery",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0015",
+    "average_amount": 10123.487242488669,
+    "amount_stddev": 2958.066151224338,
+    "country": "IN",
+    "device_ids": [
+      "device_0015_01",
+      "device_0015_02"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0016",
+    "average_amount": 2709.226880485548,
+    "amount_stddev": 903.3557249992054,
+    "country": "IN",
+    "device_ids": [
+      "device_0016_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0017",
+    "average_amount": 10867.044492010804,
+    "amount_stddev": 3614.0761712932267,
+    "country": "US",
+    "device_ids": [
+      "device_0017_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0018",
+    "average_amount": 3359.2397413753342,
+    "amount_stddev": 735.4907129663103,
+    "country": "IN",
+    "device_ids": [
+      "device_0018_01",
+      "device_0018_02"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "transport",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0019",
+    "average_amount": 12698.49887229793,
+    "amount_stddev": 4246.579415077775,
+    "country": "IN",
+    "device_ids": [
+      "device_0019_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0020",
+    "average_amount": 12757.500503790312,
+    "amount_stddev": 3858.7269038661984,
+    "country": "IN",
+    "device_ids": [
+      "device_0020_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0021",
+    "average_amount": 1352.215806746795,
+    "amount_stddev": 527.8398611968181,
+    "country": "IN",
+    "device_ids": [
+      "device_0021_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "electronics",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0022",
+    "average_amount": 1294.78936511656,
+    "amount_stddev": 486.452304590146,
+    "country": "IN",
+    "device_ids": [
+      "device_0022_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "jewelry",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0023",
+    "average_amount": 2346.821869716374,
+    "amount_stddev": 904.6233929604366,
+    "country": "IN",
+    "device_ids": [
+      "device_0023_01",
+      "device_0023_02"
+    ],
+    "preferred_categories": [
+      "food",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0024",
+    "average_amount": 6031.828471141919,
+    "amount_stddev": 1087.2133090782534,
+    "country": "IN",
+    "device_ids": [
+      "device_0024_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "grocery",
+      "jewelry",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0025",
+    "average_amount": 7513.951024497173,
+    "amount_stddev": 1733.9240977873337,
+    "country": "IN",
+    "device_ids": [
+      "device_0025_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0026",
+    "average_amount": 13071.891354556536,
+    "amount_stddev": 2354.0411773375827,
+    "country": "US",
+    "device_ids": [
+      "device_0026_01",
+      "device_0026_02"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry",
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0027",
+    "average_amount": 9587.706305758595,
+    "amount_stddev": 3521.858573026114,
+    "country": "IN",
+    "device_ids": [
+      "device_0027_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0028",
+    "average_amount": 6059.695752020681,
+    "amount_stddev": 2101.8362586110547,
+    "country": "US",
+    "device_ids": [
+      "device_0028_01",
+      "device_0028_02"
+    ],
+    "preferred_categories": [
+      "food",
+      "grocery",
+      "jewelry",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0029",
+    "average_amount": 14006.276308975734,
+    "amount_stddev": 4757.603938245667,
+    "country": "IN",
+    "device_ids": [
+      "device_0029_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "transport",
+      "jewelry",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0030",
+    "average_amount": 5615.247734295093,
+    "amount_stddev": 1729.2262138598007,
+    "country": "US",
+    "device_ids": [
+      "device_0030_01",
+      "device_0030_02"
+    ],
+    "preferred_categories": [
+      "travel",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0031",
+    "average_amount": 2827.378738434018,
+    "amount_stddev": 1041.2698282545052,
+    "country": "US",
+    "device_ids": [
+      "device_0031_01",
+      "device_0031_02"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0032",
+    "average_amount": 12606.102263983787,
+    "amount_stddev": 4143.979249242421,
+    "country": "US",
+    "device_ids": [
+      "device_0032_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0033",
+    "average_amount": 11069.913366228198,
+    "amount_stddev": 3361.1354624239175,
+    "country": "IN",
+    "device_ids": [
+      "device_0033_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "food",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0034",
+    "average_amount": 8460.284687505735,
+    "amount_stddev": 2355.5374825290955,
+    "country": "IN",
+    "device_ids": [
+      "device_0034_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry",
+      "travel",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0035",
+    "average_amount": 2662.0860539547957,
+    "amount_stddev": 634.4774310744117,
+    "country": "IN",
+    "device_ids": [
+      "device_0035_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0036",
+    "average_amount": 9564.1526628992,
+    "amount_stddev": 2109.752456897657,
+    "country": "GB",
+    "device_ids": [
+      "device_0036_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0037",
+    "average_amount": 12756.5623549605,
+    "amount_stddev": 3274.5718209245574,
+    "country": "GB",
+    "device_ids": [
+      "device_0037_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0038",
+    "average_amount": 2804.6485863768107,
+    "amount_stddev": 957.834833558157,
+    "country": "IN",
+    "device_ids": [
+      "device_0038_01",
+      "device_0038_02"
+    ],
+    "preferred_categories": [
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0039",
+    "average_amount": 10715.97075340597,
+    "amount_stddev": 2477.067627077857,
+    "country": "IN",
+    "device_ids": [
+      "device_0039_01",
+      "device_0039_02"
+    ],
+    "preferred_categories": [
+      "health",
+      "food",
+      "jewelry",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0040",
+    "average_amount": 10530.498393249503,
+    "amount_stddev": 2774.5098387461862,
+    "country": "IN",
+    "device_ids": [
+      "device_0040_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "electronics",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0041",
+    "average_amount": 8328.056043275037,
+    "amount_stddev": 1259.9677032396871,
+    "country": "IN",
+    "device_ids": [
+      "device_0041_01",
+      "device_0041_02"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0042",
+    "average_amount": 14121.298374645497,
+    "amount_stddev": 5300.18114919862,
+    "country": "IN",
+    "device_ids": [
+      "device_0042_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry",
+      "electronics",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0043",
+    "average_amount": 6305.302869376444,
+    "amount_stddev": 1257.4454193834858,
+    "country": "GB",
+    "device_ids": [
+      "device_0043_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0044",
+    "average_amount": 5799.908720054664,
+    "amount_stddev": 2145.8982970657303,
+    "country": "IN",
+    "device_ids": [
+      "device_0044_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "jewelry",
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0045",
+    "average_amount": 5291.460511248085,
+    "amount_stddev": 1484.0155776445836,
+    "country": "GB",
+    "device_ids": [
+      "device_0045_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "travel",
+      "transport",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0046",
+    "average_amount": 14174.353207599399,
+    "amount_stddev": 5206.710499127736,
+    "country": "IN",
+    "device_ids": [
+      "device_0046_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0047",
+    "average_amount": 13803.862831868933,
+    "amount_stddev": 3998.36562910201,
+    "country": "IN",
+    "device_ids": [
+      "device_0047_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "food",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0048",
+    "average_amount": 14858.228533411808,
+    "amount_stddev": 5393.843919964878,
+    "country": "GB",
+    "device_ids": [
+      "device_0048_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0049",
+    "average_amount": 11521.262204066868,
+    "amount_stddev": 4350.3116831822,
+    "country": "IN",
+    "device_ids": [
+      "device_0049_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0050",
+    "average_amount": 4324.184283752373,
+    "amount_stddev": 1670.2172581498735,
+    "country": "IN",
+    "device_ids": [
+      "device_0050_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "electronics",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0051",
+    "average_amount": 12594.826510126622,
+    "amount_stddev": 3399.703362871368,
+    "country": "IN",
+    "device_ids": [
+      "device_0051_01",
+      "device_0051_02"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0052",
+    "average_amount": 8939.417447994343,
+    "amount_stddev": 1478.6049359672315,
+    "country": "IN",
+    "device_ids": [
+      "device_0052_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0053",
+    "average_amount": 12376.658350796994,
+    "amount_stddev": 3245.984502889227,
+    "country": "IN",
+    "device_ids": [
+      "device_0053_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0054",
+    "average_amount": 10869.688905787052,
+    "amount_stddev": 3450.612714574984,
+    "country": "IN",
+    "device_ids": [
+      "device_0054_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry",
+      "electronics",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0055",
+    "average_amount": 13082.08930440839,
+    "amount_stddev": 4397.664012388198,
+    "country": "GB",
+    "device_ids": [
+      "device_0055_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0056",
+    "average_amount": 2499.840500990583,
+    "amount_stddev": 607.9131644065238,
+    "country": "IN",
+    "device_ids": [
+      "device_0056_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "electronics",
+      "grocery",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0057",
+    "average_amount": 6907.348237049022,
+    "amount_stddev": 1837.741473684962,
+    "country": "GB",
+    "device_ids": [
+      "device_0057_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "health",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0058",
+    "average_amount": 6902.450958122293,
+    "amount_stddev": 1321.0156468147093,
+    "country": "US",
+    "device_ids": [
+      "device_0058_01",
+      "device_0058_02"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "food",
+      "electronics",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0059",
+    "average_amount": 4770.618726645854,
+    "amount_stddev": 1300.687075007712,
+    "country": "IN",
+    "device_ids": [
+      "device_0059_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "travel",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0060",
+    "average_amount": 12705.065281415094,
+    "amount_stddev": 4358.97728753987,
+    "country": "IN",
+    "device_ids": [
+      "device_0060_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "electronics",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0061",
+    "average_amount": 9792.435843723804,
+    "amount_stddev": 3751.095701432031,
+    "country": "US",
+    "device_ids": [
+      "device_0061_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "travel",
+      "jewelry",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0062",
+    "average_amount": 681.7977733606765,
+    "amount_stddev": 194.8668470894832,
+    "country": "IN",
+    "device_ids": [
+      "device_0062_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0063",
+    "average_amount": 9275.50422815763,
+    "amount_stddev": 1997.972026386488,
+    "country": "IN",
+    "device_ids": [
+      "device_0063_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0064",
+    "average_amount": 1005.4885210263255,
+    "amount_stddev": 293.29130665442034,
+    "country": "IN",
+    "device_ids": [
+      "device_0064_01"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "jewelry",
+      "food",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0065",
+    "average_amount": 8929.365432252951,
+    "amount_stddev": 2678.8577290543794,
+    "country": "US",
+    "device_ids": [
+      "device_0065_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "transport",
+      "health",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0066",
+    "average_amount": 14823.47726586145,
+    "amount_stddev": 3224.9080051001356,
+    "country": "IN",
+    "device_ids": [
+      "device_0066_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "travel",
+      "grocery",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0067",
+    "average_amount": 14018.28656200997,
+    "amount_stddev": 2791.0986669606227,
+    "country": "GB",
+    "device_ids": [
+      "device_0067_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0068",
+    "average_amount": 6430.656453533337,
+    "amount_stddev": 2226.804898617089,
+    "country": "IN",
+    "device_ids": [
+      "device_0068_01",
+      "device_0068_02"
+    ],
+    "preferred_categories": [
+      "food",
+      "jewelry",
+      "transport",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0069",
+    "average_amount": 14975.082829238077,
+    "amount_stddev": 4916.420698921744,
+    "country": "IN",
+    "device_ids": [
+      "device_0069_01"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0070",
+    "average_amount": 11961.132790499269,
+    "amount_stddev": 4060.346248031913,
+    "country": "GB",
+    "device_ids": [
+      "device_0070_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "grocery",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0071",
+    "average_amount": 6624.243711702948,
+    "amount_stddev": 1117.7979690855586,
+    "country": "US",
+    "device_ids": [
+      "device_0071_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "transport",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0072",
+    "average_amount": 3261.8963807101054,
+    "amount_stddev": 1032.8836561147257,
+    "country": "US",
+    "device_ids": [
+      "device_0072_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0073",
+    "average_amount": 12859.095967599374,
+    "amount_stddev": 2128.5434524700163,
+    "country": "IN",
+    "device_ids": [
+      "device_0073_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "travel",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0074",
+    "average_amount": 894.5764871633655,
+    "amount_stddev": 228.0961174081947,
+    "country": "US",
+    "device_ids": [
+      "device_0074_01",
+      "device_0074_02"
+    ],
+    "preferred_categories": [
+      "health",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0075",
+    "average_amount": 11166.132478345156,
+    "amount_stddev": 4140.475845923901,
+    "country": "IN",
+    "device_ids": [
+      "device_0075_01"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "transport",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0076",
+    "average_amount": 14961.969253656564,
+    "amount_stddev": 5235.708112752802,
+    "country": "GB",
+    "device_ids": [
+      "device_0076_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0077",
+    "average_amount": 9482.60759590541,
+    "amount_stddev": 1634.8814755826145,
+    "country": "IN",
+    "device_ids": [
+      "device_0077_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "jewelry",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0078",
+    "average_amount": 9145.28838615849,
+    "amount_stddev": 1687.7234582173953,
+    "country": "US",
+    "device_ids": [
+      "device_0078_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "health",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0079",
+    "average_amount": 10985.783040441407,
+    "amount_stddev": 3590.5799706745834,
+    "country": "US",
+    "device_ids": [
+      "device_0079_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0080",
+    "average_amount": 7994.435826972834,
+    "amount_stddev": 2399.407015260143,
+    "country": "US",
+    "device_ids": [
+      "device_0080_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0081",
+    "average_amount": 6941.701709755742,
+    "amount_stddev": 2763.3625202131357,
+    "country": "IN",
+    "device_ids": [
+      "device_0081_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0082",
+    "average_amount": 9454.423413361785,
+    "amount_stddev": 2064.9577896783608,
+    "country": "IN",
+    "device_ids": [
+      "device_0082_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "grocery",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0083",
+    "average_amount": 8801.062316395635,
+    "amount_stddev": 3440.234923170779,
+    "country": "GB",
+    "device_ids": [
+      "device_0083_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "travel",
+      "electronics",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0084",
+    "average_amount": 12207.04959615026,
+    "amount_stddev": 2751.0865747216003,
+    "country": "IN",
+    "device_ids": [
+      "device_0084_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "grocery",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0085",
+    "average_amount": 671.974392307856,
+    "amount_stddev": 245.3353420850424,
+    "country": "GB",
+    "device_ids": [
+      "device_0085_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "electronics",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0086",
+    "average_amount": 11999.642884666062,
+    "amount_stddev": 4687.680018473802,
+    "country": "IN",
+    "device_ids": [
+      "device_0086_01"
+    ],
+    "preferred_categories": [
+      "food",
+      "health",
+      "transport",
+      "travel"
+    ]
+  },
+  {
+    "customer_id": "cust_0087",
+    "average_amount": 1477.4119158980488,
+    "amount_stddev": 256.910998822247,
+    "country": "GB",
+    "device_ids": [
+      "device_0087_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "grocery",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0088",
+    "average_amount": 5867.078854298872,
+    "amount_stddev": 1331.1217102297994,
+    "country": "IN",
+    "device_ids": [
+      "device_0088_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0089",
+    "average_amount": 7361.527455636562,
+    "amount_stddev": 2267.3552785529814,
+    "country": "IN",
+    "device_ids": [
+      "device_0089_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry",
+      "health",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0090",
+    "average_amount": 14137.229099221246,
+    "amount_stddev": 3254.8262061498535,
+    "country": "US",
+    "device_ids": [
+      "device_0090_01",
+      "device_0090_02"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0091",
+    "average_amount": 2588.042364959523,
+    "amount_stddev": 955.1077228193938,
+    "country": "IN",
+    "device_ids": [
+      "device_0091_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "electronics",
+      "food",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0092",
+    "average_amount": 5059.045439029193,
+    "amount_stddev": 1339.799640083564,
+    "country": "GB",
+    "device_ids": [
+      "device_0092_01"
+    ],
+    "preferred_categories": [
+      "electronics",
+      "grocery",
+      "transport"
+    ]
+  },
+  {
+    "customer_id": "cust_0093",
+    "average_amount": 4367.220835838087,
+    "amount_stddev": 1439.5968845488646,
+    "country": "GB",
+    "device_ids": [
+      "device_0093_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "jewelry"
+    ]
+  },
+  {
+    "customer_id": "cust_0094",
+    "average_amount": 9129.586710325913,
+    "amount_stddev": 2920.5189041143058,
+    "country": "IN",
+    "device_ids": [
+      "device_0094_01"
+    ],
+    "preferred_categories": [
+      "health",
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0095",
+    "average_amount": 1911.4526426585835,
+    "amount_stddev": 597.5336936236761,
+    "country": "GB",
+    "device_ids": [
+      "device_0095_01",
+      "device_0095_02"
+    ],
+    "preferred_categories": [
+      "travel",
+      "electronics",
+      "grocery",
+      "health"
+    ]
+  },
+  {
+    "customer_id": "cust_0096",
+    "average_amount": 7766.048608353183,
+    "amount_stddev": 3083.4579651805684,
+    "country": "GB",
+    "device_ids": [
+      "device_0096_01"
+    ],
+    "preferred_categories": [
+      "travel",
+      "grocery",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0097",
+    "average_amount": 5369.01624636073,
+    "amount_stddev": 1888.495333839185,
+    "country": "IN",
+    "device_ids": [
+      "device_0097_01"
+    ],
+    "preferred_categories": [
+      "grocery",
+      "health",
+      "jewelry",
+      "electronics"
+    ]
+  },
+  {
+    "customer_id": "cust_0098",
+    "average_amount": 10401.870400325313,
+    "amount_stddev": 2413.2429898084392,
+    "country": "IN",
+    "device_ids": [
+      "device_0098_01"
+    ],
+    "preferred_categories": [
+      "jewelry",
+      "electronics",
+      "food"
+    ]
+  },
+  {
+    "customer_id": "cust_0099",
+    "average_amount": 14710.464109391574,
+    "amount_stddev": 4980.74835065301,
+    "country": "GB",
+    "device_ids": [
+      "device_0099_01"
+    ],
+    "preferred_categories": [
+      "transport",
+      "food",
+      "jewelry",
+      "grocery"
+    ]
+  },
+  {
+    "customer_id": "cust_0100",
+    "average_amount": 7192.977321889966,
+    "amount_stddev": 2171.434472360938,
+    "country": "IN",
+    "device_ids": [
+      "device_0100_01",
+      "device_0100_02"
+    ],
+    "preferred_categories": [
+      "transport",
+      "electronics",
+      "travel"
+    ]
+  }
+]

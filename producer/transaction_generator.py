@@ -4,7 +4,7 @@ import random
 import signal
 import time
 import uuid
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -23,6 +23,9 @@ DEFAULT_ANOMALY_RATE = 0.10
 
 GROUND_TRUTH_DIR = Path(__file__).parent / "output"
 GROUND_TRUTH_FILE = GROUND_TRUTH_DIR / "ground_truth.jsonl"
+
+CUSTOMER_DATA_DIR = Path(__file__).parent / "data"
+CUSTOMER_PROFILES_FILE = CUSTOMER_DATA_DIR / "customers.json"
 
 
 # ============================================================
@@ -91,7 +94,13 @@ signal.signal(signal.SIGTERM, handle_shutdown)
 # CUSTOMER CREATION
 # ============================================================
 
-def create_customer_profiles(number_of_customers: int) -> list[CustomerProfile]:
+# ============================================================
+# CUSTOMER CREATION
+# ============================================================
+
+def create_customer_profiles(
+    number_of_customers: int,
+) -> list[CustomerProfile]:
     """
     Create synthetic customer profiles.
 
@@ -105,19 +114,30 @@ def create_customer_profiles(number_of_customers: int) -> list[CustomerProfile]:
     profiles = []
 
     for i in range(1, number_of_customers + 1):
-        average_amount = random.uniform(500, 15000)
 
-        amount_stddev = average_amount * random.uniform(0.15, 0.40)
+        average_amount = random.uniform(
+            500,
+            15000,
+        )
 
-        country = random.choice(["IN", "IN", "IN", "US", "GB"])
+        amount_stddev = (
+            average_amount
+            * random.uniform(0.15, 0.40)
+        )
+
+        country = random.choice(
+            ["IN", "IN", "IN", "US", "GB"]
+        )
 
         device_ids = [
             f"device_{i:04d}_01"
         ]
 
-        # Some customers use two devices.
         if random.random() < 0.25:
-            device_ids.append(f"device_{i:04d}_02")
+
+            device_ids.append(
+                f"device_{i:04d}_02"
+            )
 
         preferred_categories = random.sample(
             MERCHANT_CATEGORIES,
@@ -134,6 +154,112 @@ def create_customer_profiles(number_of_customers: int) -> list[CustomerProfile]:
                 preferred_categories=preferred_categories,
             )
         )
+
+    return profiles
+
+
+def save_customer_profiles(
+    profiles: list[CustomerProfile],
+) -> None:
+    """
+    Save customer profiles to disk as JSON.
+
+    This makes customer behavior persistent across
+    generator restarts.
+    """
+
+    CUSTOMER_DATA_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    serialized_profiles = [
+        asdict(profile)
+        for profile in profiles
+    ]
+
+    with CUSTOMER_PROFILES_FILE.open(
+        "w",
+        encoding="utf-8",
+    ) as file:
+
+        json.dump(
+            serialized_profiles,
+            file,
+            indent=2,
+        )
+
+
+def load_customer_profiles() -> list[CustomerProfile]:
+    """
+    Load previously generated customer profiles
+    from disk.
+    """
+
+    with CUSTOMER_PROFILES_FILE.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+
+        raw_profiles = json.load(file)
+
+    return [
+        CustomerProfile(
+            customer_id=profile["customer_id"],
+            average_amount=profile["average_amount"],
+            amount_stddev=profile["amount_stddev"],
+            country=profile["country"],
+            device_ids=profile["device_ids"],
+            preferred_categories=profile[
+                "preferred_categories"
+            ],
+        )
+        for profile in raw_profiles
+    ]
+
+
+def get_customer_profiles(
+    number_of_customers: int = 100,
+) -> list[CustomerProfile]:
+    """
+    Load existing customer profiles.
+
+    If they don't exist yet, create them and persist them.
+    """
+
+    if CUSTOMER_PROFILES_FILE.exists():
+
+        print(
+            f"Loading customer profiles from "
+            f"{CUSTOMER_PROFILES_FILE}"
+        )
+
+        profiles = load_customer_profiles()
+
+        if len(profiles) != number_of_customers:
+
+            raise ValueError(
+                "Customer profile count does not match "
+                f"expected value of {number_of_customers}."
+            )
+
+        return profiles
+
+    print(
+        "No customer profile file found. "
+        "Generating new customer profiles..."
+    )
+
+    profiles = create_customer_profiles(
+        number_of_customers
+    )
+
+    save_customer_profiles(profiles)
+
+    print(
+        f"Saved customer profiles to "
+        f"{CUSTOMER_PROFILES_FILE}"
+    )
 
     return profiles
 
@@ -410,6 +536,57 @@ def publish_transaction(
 
     producer.poll(0)
 
+# ============================================================
+# VELOCITY ANOMALY
+# ============================================================
+
+def publish_velocity_burst(
+    producer: Producer,
+    customer: CustomerProfile,
+    burst_size: int = 10,
+):
+    """
+    Generate a burst of transactions for one customer.
+
+    The transactions themselves are intentionally kept
+    relatively normal. The anomaly comes from their frequency.
+    """
+
+    print(
+        f"[VELOCITY BURST] "
+        f"customer_id={customer.customer_id} "
+        f"events={burst_size}"
+    )
+
+    for _ in range(burst_size):
+
+        transaction = generate_normal_transaction(
+            customer
+        )
+
+        payload = json.dumps(
+            transaction
+        ).encode("utf-8")
+
+        event_id = transaction["event_id"]
+        customer_id = customer.customer_id
+
+        anomaly_type = "VELOCITY_SPIKE"
+
+        producer.produce(
+            topic=KAFKA_TOPIC,
+            key=customer_id,
+            value=payload,
+            callback=lambda err, msg: delivery_report(
+                err,
+                msg,
+                event_id,
+                customer_id,
+                anomaly_type,
+            ),
+        )
+
+        producer.poll(0)
 
 # ============================================================
 # GENERATOR LOOP
@@ -431,7 +608,7 @@ def run_generator(
         }
     )
 
-    customers = create_customer_profiles(
+    customers = get_customer_profiles(
         number_of_customers=100
     )
 
@@ -478,15 +655,39 @@ def run_generator(
                     "AMOUNT_SPIKE",
                     "UNUSUAL_COUNTRY",
                     "NEW_DEVICE",
+                    "VELOCITY_SPIKE",
                     "COMBINED_ANOMALY",
                 ]
             )
 
-        publish_transaction(
-            producer=producer,
-            customer=customer,
-            anomaly_type=anomaly_type,
-        )
+            if anomaly_type == "VELOCITY_SPIKE":
+
+                burst_size = random.randint(
+                    8,
+                    12,
+                )
+
+                publish_velocity_burst(
+                    producer=producer,
+                    customer=customer,
+                    burst_size=burst_size,
+                )
+
+            else:
+
+                publish_transaction(
+                    producer=producer,
+                    customer=customer,
+                    anomaly_type=anomaly_type,
+                )
+
+        else:
+
+            publish_transaction(
+                producer=producer,
+                customer=customer,
+                anomaly_type=None,
+            )
 
         time.sleep(delay)
 
