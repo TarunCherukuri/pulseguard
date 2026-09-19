@@ -1,68 +1,58 @@
 # PulseGuard
 
-## Real-Time Payment Anomaly Detection & Incident Intelligence Platform
+## Streaming Transaction Anomaly Detection Platform
 
-PulseGuard is a production-style data engineering project that
-simulates payment transactions, processes them as a real-time
-stream, detects behavioral anomalies, stores analytical data in
-Google BigQuery, and uses a vector database to retrieve similar
-historical incidents and operational runbooks.
+PulseGuard is an end-to-end data engineering and anomaly detection platform designed to process transaction events in near real time.
 
-### Synthetic anomaly scenarios
+The system combines Kafka, PySpark Structured Streaming, BigQuery, dbt, Airflow, Qdrant, and Power BI into a production-style streaming analytics pipeline.
 
-- Amount spike
-- Unusual country
-- New device
-- Velocity spike
-- Combined anomaly
+---
 
 ## Architecture
 
+```text
 Transaction Generator
-        ↓
-Apache Kafka
-        ↓
+        |
+        v
+      Kafka
+        |
+        v
 PySpark Structured Streaming
-        ↓
-BigQuery
+        |
+        +--------------------+
+        |                    |
+        v                    v
+Validation +           Feature Engineering
+Data Quality                 |
+        |                    v
+        v              Anomaly Detection
+Validated Kafka Topic        |
+        |                    v
+        |              Anomaly Kafka Topic
+        |                    |
+        +----------+---------+
+                   |
+                   v
+                BigQuery
+                   |
+                   v
+                  dbt
+                   |
+                   v
+            Analytics Marts
+                   |
+            +------+------+
+            |             |
+            v             v
+        Power BI       Qdrant
+        Dashboard      Semantic Search
 
-PySpark Anomalies
-        ↓
-Incident Service
-        ↓
-Qdrant
-        ↓
-Similar Historical Incidents / Runbooks
+Airflow orchestrates warehouse refresh workflows.
 
-## Technology Stack
+## Author
 
-- Python
-- Apache Kafka
-- PySpark Structured Streaming
-- Google BigQuery
-- dbt
-- Apache Airflow
-- Qdrant
-- FastAPI
-- Streamlit
-- Docker
-- Terraform
-- GitHub Actions
+Tarun Sai Teja Cherukuri
 
-## Current Progress
+Data Engineer | Backend Engineer | Applied AI
 
-- [x] Python environment
-- [x] Project structure
-- [x] Git repository
-- [ ] Docker infrastructure
-- [ ] Kafka
-- [ ] Qdrant
-- [ ] Transaction generator
-- [ ] PySpark streaming
-- [ ] Anomaly detection
-- [ ] BigQuery
-- [ ] dbt
-- [ ] Airflow
-- [ ] Dashboard
-- [ ] Cloud deployment
-- [ ] CI/CD
+Bengaluru, India

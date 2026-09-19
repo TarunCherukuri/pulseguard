@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: pulseguard
+    database: project-28e97307-d56d-4dc8-995
+    schema: pulseguard
+    tables:
+      - name: transactions
+      - name: anomalies

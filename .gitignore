@@ -1,38 +1,43 @@
 # Python
+.venv/
 __pycache__/
 *.py[cod]
-*.pyo
+.pytest_cache/
 
-# Virtual environment
-.venv/
-
-# Environment variables / secrets
+# Secrets / credentials
 .env
-.env.*
+*.env
+*credentials*.json
+*service-account*.json
+application_default_credentials.json
 
-# IDE
-.vscode/
+# Runtime state
+checkpoints/
+quarantine/
+observability/latest_health.json
 
-# PySpark
-spark-warehouse/
-metastore_db/
+# Airflow local/runtime
+airflow/logs/
+airflow/__pycache__/
+
+# Local generated data
+producer/output/
 *.log
 
-# Qdrant local data
-qdrant_storage/
+# dbt
+dbt/target/
+dbt/logs/
+dbt_packages/
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Temporary files
-tmp/
-temp/
-
-# OS
+# OS / IDE
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
 
-# Synthetic generator output
-producer/output/
+# Power BI temporary/lock files
+*.pbi.tmp
+*.pbix.autosave
+
+evaluation/*.jsonl
+!evaluation/incident-evaluation.jsonl

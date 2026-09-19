@@ -1,0 +1,12 @@
+services:
+  airflow-dag-processor:
+    volumes:
+      - "C:/dev/pulseguard/airflow/dags:/opt/airflow/dags/pulseguard:ro"
+
+  airflow-worker:
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /tmp/pulseguard-adc.json
+      GOOGLE_CLOUD_PROJECT: project-28e97307-d56d-4dc8-995
+    volumes:
+      - "C:/dev/pulseguard/airflow/dags:/opt/airflow/dags/pulseguard:ro"
+      - "${APPDATA}/gcloud/application_default_credentials.json:/tmp/pulseguard-adc.json:ro"

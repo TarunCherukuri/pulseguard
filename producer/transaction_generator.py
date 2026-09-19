@@ -19,7 +19,12 @@ KAFKA_BOOTSTRAP_SERVERS = "localhost:9092"
 KAFKA_TOPIC = "transaction-events"
 
 DEFAULT_EVENTS_PER_SECOND = 5
-DEFAULT_ANOMALY_RATE = 0.10
+
+# Target approximately 10% anomalous events overall.
+DEFAULT_SINGLE_ANOMALY_RATE = 0.0545
+DEFAULT_VELOCITY_BURST_RATE = 0.005
+
+VELOCITY_BURST_SIZE = 10
 
 GROUND_TRUTH_DIR = Path(__file__).parent / "output"
 GROUND_TRUTH_FILE = GROUND_TRUTH_DIR / "ground_truth.jsonl"
@@ -403,6 +408,7 @@ def delivery_report(
     event_id: str,
     customer_id: str,
     anomaly_type: str,
+    incident_id: str | None = None,
 ):
     """
     Called by Kafka after attempting to deliver a message.
@@ -426,11 +432,17 @@ def delivery_report(
         f"partition={msg.partition()} "
         f"offset={msg.offset()} "
         f"ground_truth={anomaly_type}"
+        + (
+            f" incident_id={incident_id}"
+            if incident_id
+            else ""
+        )
     )
 
     write_ground_truth(
         event_id=event_id,
         anomaly_type=anomaly_type,
+        incident_id=incident_id,
     )
 
 # ============================================================
@@ -440,6 +452,7 @@ def delivery_report(
 def write_ground_truth(
     event_id: str,
     anomaly_type: str,
+    incident_id: str | None = None,
 ):
     """
     Save ground truth outside the Kafka event itself.
@@ -455,6 +468,7 @@ def write_ground_truth(
 
     record = {
         "event_id": event_id,
+        "incident_id": incident_id,
         "ground_truth_anomaly": anomaly_type,
         "recorded_at": datetime.now(
             timezone.utc
@@ -525,13 +539,18 @@ def publish_transaction(
         topic=KAFKA_TOPIC,
         key=customer_id,
         value=payload,
-        callback=lambda err, msg: delivery_report(
-            err,
-            msg,
-            event_id,
-            customer_id,
-            ground_truth,
-        ),
+        callback=lambda err, msg,
+            event_id=event_id,
+            customer_id=customer_id,
+            anomaly_type=ground_truth:
+                delivery_report(
+                    err,
+                    msg,
+                    event_id,
+                    customer_id,
+                    anomaly_type,
+                    None,
+                ),
     )
 
     producer.poll(0)
@@ -543,19 +562,23 @@ def publish_transaction(
 def publish_velocity_burst(
     producer: Producer,
     customer: CustomerProfile,
-    burst_size: int = 10,
+    burst_size: int = VELOCITY_BURST_SIZE,
 ):
     """
     Generate a burst of transactions for one customer.
 
-    The transactions themselves are intentionally kept
-    relatively normal. The anomaly comes from their frequency.
+    All events belong to one logical anomaly incident.
     """
+
+    incident_id = (
+        f"incident_{uuid.uuid4().hex[:12]}"
+    )
 
     print(
         f"[VELOCITY BURST] "
         f"customer_id={customer.customer_id} "
-        f"events={burst_size}"
+        f"events={burst_size} "
+        f"incident_id={incident_id}"
     )
 
     for _ in range(burst_size):
@@ -577,13 +600,19 @@ def publish_velocity_burst(
             topic=KAFKA_TOPIC,
             key=customer_id,
             value=payload,
-            callback=lambda err, msg: delivery_report(
-                err,
-                msg,
-                event_id,
-                customer_id,
-                anomaly_type,
-            ),
+            callback=lambda err, msg,
+                event_id=event_id,
+                customer_id=customer_id,
+                anomaly_type=anomaly_type,
+                incident_id=incident_id:
+                    delivery_report(
+                        err,
+                        msg,
+                        event_id,
+                        customer_id,
+                        anomaly_type,
+                        incident_id,
+                    ),
         )
 
         producer.poll(0)
@@ -594,7 +623,6 @@ def publish_velocity_burst(
 
 def run_generator(
     events_per_second: float,
-    anomaly_rate: float,
 ):
     """
     Continuously generate transactions and send them
@@ -614,6 +642,9 @@ def run_generator(
 
     delay = 1 / events_per_second
 
+    single_anomaly_rate = DEFAULT_SINGLE_ANOMALY_RATE
+    velocity_burst_rate = DEFAULT_VELOCITY_BURST_RATE
+
     print("=" * 60)
     print("PulseGuard Transaction Generator")
     print("=" * 60)
@@ -631,7 +662,13 @@ def run_generator(
     )
 
     print(
-        f"Anomaly rate: {anomaly_rate:.0%}"
+        f"Single-event anomaly rate: "
+        f"{single_anomaly_rate:.2%}"
+    )
+
+    print(
+        f"Velocity burst trigger rate: "
+        f"{velocity_burst_rate:.2%}"
     )
 
     print(
@@ -646,40 +683,35 @@ def run_generator(
 
         customer = random.choice(customers)
 
-        anomaly_type = None
+        random_value = random.random()
 
-        if random.random() < anomaly_rate:
+        if random_value < velocity_burst_rate:
+
+            publish_velocity_burst(
+                producer=producer,
+                customer=customer,
+                burst_size=VELOCITY_BURST_SIZE,
+            )
+
+        elif random_value < (
+            velocity_burst_rate
+            + single_anomaly_rate
+        ):
 
             anomaly_type = random.choice(
                 [
                     "AMOUNT_SPIKE",
                     "UNUSUAL_COUNTRY",
                     "NEW_DEVICE",
-                    "VELOCITY_SPIKE",
                     "COMBINED_ANOMALY",
                 ]
             )
 
-            if anomaly_type == "VELOCITY_SPIKE":
-
-                burst_size = random.randint(
-                    8,
-                    12,
-                )
-
-                publish_velocity_burst(
-                    producer=producer,
-                    customer=customer,
-                    burst_size=burst_size,
-                )
-
-            else:
-
-                publish_transaction(
-                    producer=producer,
-                    customer=customer,
-                    anomaly_type=anomaly_type,
-                )
+            publish_transaction(
+                producer=producer,
+                customer=customer,
+                anomaly_type=anomaly_type,
+            )
 
         else:
 
@@ -690,15 +722,6 @@ def run_generator(
             )
 
         time.sleep(delay)
-
-    print()
-    print("Stopping generator...")
-
-    producer.flush(
-        timeout=10
-    )
-
-    print("Generator stopped cleanly.")
 
 
 # ============================================================
@@ -720,12 +743,6 @@ def parse_arguments():
         default=DEFAULT_EVENTS_PER_SECOND,
     )
 
-    parser.add_argument(
-        "--anomaly-rate",
-        type=float,
-        default=DEFAULT_ANOMALY_RATE,
-    )
-
     return parser.parse_args()
 
 
@@ -738,14 +755,8 @@ def main():
             "events-per-second must be greater than 0."
         )
 
-    if not 0 <= args.anomaly_rate <= 1:
-        raise ValueError(
-            "anomaly-rate must be between 0 and 1."
-        )
-
     run_generator(
         events_per_second=args.events_per_second,
-        anomaly_rate=args.anomaly_rate,
     )
 
 

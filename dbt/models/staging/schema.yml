@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      - name: amount
+        tests:
+          - not_null
+
+  - name: stg_anomalies
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: anomaly_reason
+        tests:
+          - not_null
